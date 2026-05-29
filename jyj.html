@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>LUMÈRE & SCIENCE — главная</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #2e2a28;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== ХЕДЕР ===== */
+        header {
+            background-color: #3a8045;
+            padding: 32px 0 16px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: white;
+            margin: 0;
+        }
+
+        .home-icon {
+            font-size: 2rem;
+            font-weight: 400;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .home-icon:hover {
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            text-align: center;
+        }
+
+        .header-nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 450;
+            color: white;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: #e0e0e0;
+        }
+
+        /* ===== БЛОК НОВИНКИ ===== */
+        .hero {
+            margin: 48px 0 40px;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 2.8rem;
+            font-weight: 480;
+            letter-spacing: -0.01em;
+            color: #2c2a27;
+            margin-bottom: 32px;
+        }
+
+        .hero-image {
+            margin: 0 0 32px 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #b48c5c;
+            padding: 10px 32px;
+            text-decoration: none;
+            font-weight: 500;
+            color: #b48c5c;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline:hover {
+            background: #b48c5c;
+            color: white;
+        }
+
+        /* ===== БЛОК С ТЕКСТОМ ===== */
+        .brand-story {
+            margin: 40px 0 50px;
+            text-align: left;
+            max-width: 700px;
+        }
+
+        .brand-story h3 {
+            font-size: 2rem;
+            font-weight: 470;
+            color: #2c2a27;
+            margin-bottom: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        .brand-story p {
+            font-size: 1.4rem;
+            color: #5a4f46;
+            line-height: 1.5;
+            font-weight: 450;
+        }
+
+        /* ===== КАТАЛОГ ===== */
+        .catalog-section {
+            margin: 60px 0 72px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 480;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: -0.01em;
+            color: #2c2a27;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .product-item {
+            text-align: center;
+        }
+
+        .product-category {
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #b48c5c;
+            margin-bottom: 20px;
+        }
+
+        /* Ссылка на категорию УХОДОВАЯ */
+        .product-category a {
+            color: #b48c5c;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .product-category a:hover {
+            color: #8b5e3c;
+            text-decoration: underline;
+        }
+
+        .product-image {
+            margin-bottom: 20px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: #f3efe9;
+            border: 1px solid #eee5dc;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 480;
+            margin-bottom: 12px;
+            color: #2c2a27;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3e3a36;
+            margin-bottom: 16px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: #b48c5c;
+            border-bottom: 1px solid #e2cfbc;
+            transition: border-color 0.2s;
+        }
+
+        .btn-link:hover {
+            border-bottom-color: #b48c5c;
+        }
+
+        .catalog-footer {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        /* ===== ПОДПИСКА ===== */
+        .newsletter {
+            background: #f3efe9;
+            padding: 56px 40px;
+            margin: 60px 0 48px;
+            text-align: center;
+        }
+
+        .newsletter h4 {
+            font-size: 1.6rem;
+            font-weight: 460;
+            color: #2c2a27;
+            margin-bottom: 12px;
+        }
+
+        .newsletter p {
+            color: #6c5d51;
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid #e2d4c8;
+            font-size: 0.9rem;
+            background: white;
+            font-family: inherit;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #b48c5c;
+        }
+
+        .btn-dark {
+            background: #2c2a27;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-dark:hover {
+            background: #4a3f36;
+        }
+
+        /* ===== ФУТЕР ===== */
+        footer {
+            background-color: #3a8045;
+            padding: 48px 0 40px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-col:first-child {
+            flex: 1.2;
+        }
+
+        .footer-col h5 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            color: white;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .copyright {
+            margin-top: 48px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #e0e0e0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 28px;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 20px;
+            }
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            .brand-story h3 {
+                font-size: 2rem;
+            }
+            .brand-story p {
+                font-size: 2rem;
+            }
+            .catalog-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .footer-grid {
+                flex-direction: column;
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .header-nav ul {
+                gap: 1.2rem;
+            }
+            .hero-content h2 {
+                font-size: 1.9rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .newsletter {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <h1>LUMÈRE & SCIENCE</h1>
+                </div>
+                <a href="jyj.html" class="home-icon" aria-label="Главная">⌂</a>
+            </div>
+            <div class="header-nav">
+                <ul>
+                    <li><a href="#">каталог</a></li>
+                    <li><a href="#">о нас</a></li>
+                    <li><a href="#">доставка</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>НОВИНКИ</h2>
+                    <div class="hero-image">
+                        <img src="file:///C:/Users/laptop/Downloads/2026-05-28_19-05-54-Picsart-AiImageEnhancer.png" alt="Новинка косметики">
+                    </div>
+                    <a href="#" class="btn-outline">Перейти</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="brand-story">
+                <h3>LUMÈRE & SCIENCE</h3>
+                <p>Эффективные инструменты самовыражения и ухода,<br> основанные на доверии к науке и любви к эстетике.</p>
+            </div>
+        </div>
+
+        <section class="catalog-section">
+            <div class="container">
+                <h2 class="section-title">КАТАЛОГ</h2>
+                <div class="catalog-grid">
+                    <!-- Уходовая косметика — ссылка на uhodovaya.html -->
+                    <div class="product-item">
+                        <div class="product-category">
+                            <a href="uhodovaya.html">УХОДОВАЯ</a>
+                        </div>
+                        <div class="product-image">
+                            <img src="file:///C:/Users/laptop/Desktop/не%20трогать/эдэжщгрщш.png" alt="Сыворотка Алоэ">
+                        </div>
+                        <div class="product-title">СЫВОРОТКА АЛОЭ</div>
+                        <div class="product-price">590 ₽</div>
+                        <a href="uhodovaya.html" class="btn-link">подробнее</a>
+                    </div>
+                    <!-- Декоративная косметика — пока ссылка # -->
+                    <div class="product-item">
+                        <div class="product-category">ДЕКОРАТИВНАЯ</div>
+                        <div class="product-image">
+                            <img src="file:///C:/Users/laptop/Desktop/не%20трогать/ьджь.png" alt="Крем Миндаль">
+                        </div>
+                        <div class="product-title">КРЕМ МИНДАЛЬ</div>
+                        <div class="product-price">690 ₽</div>
+                        <a href="#" class="btn-link">подробнее</a>
+                    </div>
+                </div>
+                <div class="catalog-footer">
+                    <a href="#" class="btn-outline">Смотреть все</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="newsletter">
+                <h4>Подпишитесь на email-рассылку</h4>
+                <p>для получения бонусов</p>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <button type="submit" class="btn-dark">ПОДПИСАТЬСЯ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>LUMÈRE & SCIENCE</h5>
+                    <p>Инновационная космецевтика, вдохновленная светом и точностью науки.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>каталог</h5>
+                    <a href="uhodovaya.html">Уходовая косметика</a>
+                    <a href="#">Декоративная косметика</a>
+                    <a href="#">Наборы</a>
+                </div>
+                <div class="footer-col">
+                    <h5>связаться с нами</h5>
+                    <p>hello@lumierescience.ru</p>
+                    <p>+7 (495) 123-45-67</p>
+                </div>
+                <div class="footer-col">
+                    <h5>социальные сети</h5>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Telegram</a>
+                        <a href="#">VK</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© LUMÈRE & SCIENCE — все права защищены. 2026</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
